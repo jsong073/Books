@@ -67,4 +67,14 @@ public class Book {
         String displayText = this.title + "\n" + this.author + "\n" + this.description;
         return displayText;
     }
+
+    public double buyBooks(int numberOfBooks) {
+        double totalPrice = this.price * numberOfBooks;
+        if (this.isInStock == true) {
+            return totalPrice;
+        } else {
+            System.out.println("I'm sorry, we are out of stock.");
+            return totalPrice = 0;
+        }
+    }
 }
