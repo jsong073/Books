@@ -2,6 +2,7 @@ public class Book {
     private String title;
     private String author;
     private String description;
+    private String sku;
     private double price;
     private boolean isInStock;
 
@@ -12,10 +13,12 @@ public class Book {
 
     }
 
-    public Book (String title, String author, String description, double price, boolean isInStock) {
+
+    public Book (String title, String author, String description, String sku, double price, boolean isInStock) {
         this.title = title;
         this.author = author;
         this.description = description;
+        this.sku = sku;
         this.price = price;
         this.isInStock = isInStock;
     }
@@ -41,6 +44,10 @@ public class Book {
         return this.isInStock;
     }
 
+    public String getSku() {
+        return this.sku;
+    }
+
     //Setters
     public void setTitle(String title) {
         this.title = title;
@@ -62,9 +69,13 @@ public class Book {
         this.isInStock = isInStock;
     }
 
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
+
     //methods
     public String getDisplayText(){
-        String displayText = this.title + "\n" + this.author + "\n" + this.description;
+        String displayText = this.title + "\n" + this.author + "\n" + this.sku + "\n" + this.description;
         return displayText;
     }
 
@@ -77,4 +88,6 @@ public class Book {
             return totalPrice = 0;
         }
     }
+
+
 }
