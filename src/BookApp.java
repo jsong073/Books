@@ -4,6 +4,7 @@ public class BookApp {
     public static void main(String[] args) {
         BookDatabase database = new BookDatabase();
         Scanner input = new Scanner(System.in);
+        int numBooksPurchased = 0;
 
         Book book1 = new Book("Head First Java", "Kathy Sierra and Bert Bates",
                 "Easy to read Java workbook", "Java1001",47.50, true);
@@ -37,7 +38,10 @@ public class BookApp {
 
         System.out.println(sample.getDisplayText());
 
-        System.out.println("3 of these books cost $" +sample.buyBooks(3));
+        System.out.print("How many would you like to purchase? ");
+        numBooksPurchased = input.nextInt();
+
+        System.out.println(numBooksPurchased + " of these books cost $" +sample.buyBooks(numBooksPurchased));
 
     }
 
