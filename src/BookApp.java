@@ -1,6 +1,9 @@
+import java.util.*;
+
 public class BookApp {
     public static void main(String[] args) {
         BookDatabase database = new BookDatabase();
+        Scanner input = new Scanner(System.in);
 
         Book book1 = new Book("Head First Java", "Kathy Sierra and Bert Bates",
                 "Easy to read Java workbook", "Java1001",47.50, true);
@@ -29,10 +32,12 @@ public class BookApp {
                 true);
         database.addBook(book6);
 
-        Book sample = database.getBook("Java1001");
+        System.out.print("Enter an sku: ");
+        Book sample = database.getBook(input.nextLine());
 
-        System.out.println(book1.getDisplayText());
         System.out.println(sample.getDisplayText());
+
+        System.out.println("3 of these books cost $" +sample.buyBooks(3));
 
     }
 
